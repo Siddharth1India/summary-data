@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+    <title>Decode the Codes</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+    <div>
+
+    <h1 class="title">Generate summary of blog with power of AI!</h1>
+    <p>Note: Maximum output lenght is limited due to AI's limitations, if content is big, use tool for paragraphs.</p>
+    <p>Suggested to use with 2000 char max for single usage.</p>
+    <form method="POST">
+        <div class="input">
+            <textarea name="input" id="input" cols="40" rows="20">{{inp}}</textarea>
+        </div>
+        <div class="dropdown">
+            <label for="data">Select length of output</label>
+            <select name="menu" id="menu">
+                <option value="1/2">1/2</option>
+                <option value="1/4">1/4</option>
+                <option value="1/6">1/6</option>
+                <option value="1/8">1/8</option>
+            </select>
+          </div> 
+        <div class="sbmt">
+            <button type="submit">Summerize!</button>
+        </div>  
+
+    </form>
+    <div class="output">
+        {{text}}
+    </div>
+    <div class="contact">
+
+    </div>
+  </body>
+  <script src="{{url_for('static', filename='main.js')}}"></script>
+</html>
